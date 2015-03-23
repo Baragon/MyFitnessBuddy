@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/add_food_menu_new"
+          android:icon="@android:drawable/ic_menu_add"
+          android:title="@string/add_food_menu_new"
+          android:label=""
+          android:showAsAction="always|withText"></item>
+</menu>

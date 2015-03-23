@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+        <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+            <EditText
+                    android:id="@+id/add_food_input_search"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:hint="@string/add_food_input_search_hint"
+                    android:singleLine="true"
+                    android:inputType="text"
+                    android:imeOptions="actionSearch">
+            </EditText>
+            <ImageView
+                    android:id="@+id/imageView1"
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/add_food_input_search"
+                    android:layout_alignBottom="@+id/add_food_input_search"
+                    android:layout_alignRight="@+id/add_food_input_search"
+                    android:src="@android:drawable/ic_menu_search"
+                    android:onClick="onSearchClick"
+                    />
+
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent"
+                  android:layout_height="wrap_content" android:layout_marginTop="2dp">
+        <Space android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.1"/>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent"
+                      android:layout_height="fill_parent" android:layout_weight="1">
+            <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent"
+                       android:id="@+id/imageView9" android:layout_weight="1" android:src="@drawable/ic_kcal"
+                       android:layout_marginLeft="4dp" android:layout_marginRight="4dp"
+                       android:tint="@android:color/holo_purple" android:clickable="false"/>
+            <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent"
+                       android:id="@+id/imageView10" android:layout_weight="1" android:src="@drawable/ic_protein"
+                       android:tint="@android:color/holo_red_light" android:layout_marginLeft="4dp"
+                       android:layout_marginRight="4dp"/>
+            <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent"
+                       android:id="@+id/imageView11" android:layout_weight="1" android:layout_marginLeft="4dp"
+                       android:layout_marginRight="4dp" android:src="@drawable/ic_carbs"
+                       android:tint="@android:color/holo_orange_dark"/>
+            <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent"
+                       android:id="@+id/imageView12" android:layout_weight="1" android:layout_marginLeft="4dp"
+                       android:layout_marginRight="4dp" android:src="@drawable/ic_fat"
+                       android:tint="@android:color/holo_orange_light"/>
+        </LinearLayout>
+    </LinearLayout>
+    <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <ProgressBar
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/addFood_progressBar" android:layout_gravity="center"
+                android:visibility="gone" android:layout_weight="1"/>
+        <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recentFoodListView" android:choiceMode="singleChoice"/>
+    </FrameLayout>
+</LinearLayout>

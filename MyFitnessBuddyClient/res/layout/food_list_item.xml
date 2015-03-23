@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="fill_parent">
+
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="Food name"
+            android:id="@+id/foodListItem_foodName" android:layout_weight="1.1"
+            android:textAppearance="@android:style/TextAppearance.Large" android:gravity="center_vertical"
+            android:textSize="30sp"/>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" android:layout_weight="1">
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="2"
+                android:id="@+id/foodListItem_cal" android:textAppearance="@android:style/TextAppearance.Holo.Large"
+                android:layout_weight="1" android:gravity="center" android:textSize="30sp"/>
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="2"
+                android:id="@+id/foodListItem_protein"
+                android:textAppearance="@android:style/TextAppearance.Holo.Large" android:layout_weight="1"
+                android:gravity="center" android:textSize="30sp"/>
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="2"
+                android:id="@+id/foodListItem_carbs" android:textAppearance="@android:style/TextAppearance.Holo.Large"
+                android:layout_weight="1" android:gravity="center" android:textSize="30sp"/>
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="2"
+                android:id="@+id/foodListItem_fat" android:textAppearance="@android:style/TextAppearance.Holo.Large"
+                android:layout_weight="1" android:gravity="center" android:textSize="30sp"/>
+    </LinearLayout>
+</LinearLayout>

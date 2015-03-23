@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+        >
+    <LinearLayout
+            android:id="@+id/main_header"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp" android:baselineAligned="false">
+        <RelativeLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_weight="1.1">
+            <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/main_header_back_button" android:src="@drawable/ic_menu_back"
+                    android:layout_alignParentLeft="true" android:onClick="onLeftArrowClick"/>
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Today"
+                    android:id="@+id/main_header_date_textview"
+                    android:gravity="center"
+                    android:layout_toRightOf="@+id/main_header_back_button"
+                    android:layout_toLeftOf="@+id/main_header_next_button"
+                    android:layout_centerVertical="true" android:onClick="onDateClick" android:clickable="true"/>
+            <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/main_header_next_button" android:src="@drawable/ic_menu_forward"
+                    android:layout_alignParentRight="true"
+                    android:onClick="onRightArrowClick"/>
+        </RelativeLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" android:layout_weight="1">
+            <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/imageView" android:layout_weight="1"
+                    android:src="@drawable/ic_kcal" android:layout_marginLeft="4dp" android:layout_marginRight="4dp"
+                    android:tint="@android:color/holo_purple"
+                    android:clickable="false" android:scaleType="center"/>
+            <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/imageView2" android:layout_weight="1"
+                    android:src="@drawable/ic_protein" android:tint="@android:color/holo_red_light"
+                    android:layout_marginLeft="4dp" android:layout_marginRight="4dp" android:scaleType="center"/>
+            <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/imageView3" android:layout_weight="1"
+                    android:layout_marginLeft="4dp" android:layout_marginRight="4dp" android:src="@drawable/ic_carbs"
+                    android:tint="@android:color/holo_orange_dark" android:scaleType="center"/>
+            <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/imageView4" android:layout_weight="1"
+                    android:layout_marginLeft="4dp" android:layout_marginRight="4dp" android:src="@drawable/ic_fat"
+                    android:tint="@android:color/holo_orange_light" android:scaleType="center"/>
+        </LinearLayout>
+    </LinearLayout>
+    <FrameLayout
+            android:id="@+id/main_content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" android:layout_alignParentLeft="true"
+            android:layout_above="@+id/main_footer"
+            android:layout_below="@+id/main_header">
+        <ProgressBar
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/mealsList_progressBar" android:layout_gravity="center" android:visibility="gone"/>
+        <ExpandableListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/expandableListView" android:layout_gravity="center_horizontal"
+                android:divider="@android:color/holo_blue_dark" android:dividerHeight="1dp"
+                android:drawSelectorOnTop="false" android:footerDividersEnabled="false"
+                android:headerDividersEnabled="false" android:childDivider="@android:color/transparent"
+                android:choiceMode="singleChoice" android:longClickable="true" android:clickable="true"/>
+    </FrameLayout>
+    <LinearLayout
+            android:id="@+id/main_footer"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentBottom="true">
+        <View style="@style/HorizontalDivider"/>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent"
+                      android:layout_height="fill_parent">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent"
+                          android:layout_height="wrap_content" android:layout_weight="1.1">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:textAppearance="?android:attr/textAppearanceLarge"
+                          android:text="@string/main_footer_remaining" android:id="@+id/textView10"
+                          android:textSize="@dimen/text_size_meals_macros" android:textStyle="bold"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent"
+                          android:layout_height="fill_parent" android:layout_weight="1">
+                <TextView android:layout_width="fill_parent" android:layout_height="fill_parent"
+                          android:textAppearance="?android:attr/textAppearanceLarge" android:text="100"
+                          android:id="@+id/main_remainCal" android:layout_weight="1" android:textStyle="bold"
+                          android:textSize="@dimen/text_size_meals_macros" android:gravity="center"
+                        />
+                <TextView android:layout_width="fill_parent" android:layout_height="fill_parent"
+                          android:textAppearance="?android:attr/textAppearanceLarge" android:text="10"
+                          android:id="@+id/main_remainProtein" android:layout_weight="1" android:textStyle="bold"
+                          android:textSize="@dimen/text_size_meals_macros" android:gravity="center"
+                          android:textColor="@color/remaining_bad"/>
+                <TextView android:layout_width="fill_parent" android:layout_height="fill_parent"
+                          android:textAppearance="?android:attr/textAppearanceLarge" android:text="10"
+                          android:id="@+id/main_remainCarbs" android:layout_weight="1" android:textStyle="bold"
+                          android:textSize="@dimen/text_size_meals_macros" android:gravity="center"
+                          android:textColor="@color/remaining_good"/>
+                <TextView android:layout_width="fill_parent" android:layout_height="fill_parent"
+                          android:textAppearance="?android:attr/textAppearanceLarge" android:text="10"
+                          android:id="@+id/main_remainFat" android:layout_weight="1" android:textStyle="bold"
+                          android:textSize="@dimen/text_size_meals_macros" android:gravity="center"
+                          android:textColor="@color/remaining_okay"/>
+            </LinearLayout>
+        </LinearLayout>
+        <View style="@style/HorizontalDivider" android:visibility="gone"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" android:visibility="gone">
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" android:layout_weight="1.1">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/main_footer_total"
+                        android:id="@+id/textView3" android:textSize="@dimen/text_size_meals_macros"
+                        android:textStyle="italic"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" android:layout_weight="1">
+                <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="100"
+                        android:id="@+id/main_totalCal" android:layout_weight="1"
+                        android:textSize="@dimen/text_size_meals_macros" android:gravity="center"
+                        android:textStyle="italic"/>
+                <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="10"
+                        android:id="@+id/main_totalProtein" android:layout_weight="1"
+                        android:textSize="@dimen/text_size_meals_macros" android:gravity="center"
+                        android:textStyle="italic"/>
+                <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="10"
+                        android:id="@+id/main_totalCarbs" android:layout_weight="1"
+                        android:textSize="@dimen/text_size_meals_macros" android:gravity="center"
+                        android:textStyle="italic"/>
+                <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="10"
+                        android:id="@+id/main_totalFat" android:layout_weight="1"
+                        android:textSize="@dimen/text_size_meals_macros" android:gravity="center"
+                        android:textStyle="italic"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent"
+                      android:layout_height="fill_parent" android:visibility="gone">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent"
+                          android:layout_height="wrap_content" android:layout_weight="1.1">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:textAppearance="?android:attr/textAppearanceLarge"
+                          android:text="@string/main_footer_goal" android:id="@+id/textView5"
+                          android:textSize="@dimen/text_size_meals_macros" android:textStyle="italic"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent"
+                          android:layout_height="fill_parent" android:layout_weight="1">
+                <TextView android:layout_width="fill_parent" android:layout_height="fill_parent"
+                          android:textAppearance="?android:attr/textAppearanceLarge" android:text="100"
+                          android:id="@+id/main_goalCal" android:layout_weight="1"
+                          android:textSize="@dimen/text_size_meals_macros" android:gravity="center"
+                          android:textStyle="italic"/>
+                <TextView android:layout_width="fill_parent" android:layout_height="fill_parent"
+                          android:textAppearance="?android:attr/textAppearanceLarge" android:text="10"
+                          android:id="@+id/main_goalProtein" android:layout_weight="1"
+                          android:textSize="@dimen/text_size_meals_macros" android:gravity="center"
+                          android:textStyle="italic"/>
+                <TextView android:layout_width="fill_parent" android:layout_height="fill_parent"
+                          android:textAppearance="?android:attr/textAppearanceLarge" android:text="10"
+                          android:id="@+id/main_goalCarbs" android:layout_weight="1"
+                          android:textSize="@dimen/text_size_meals_macros" android:gravity="center"
+                          android:textStyle="italic"/>
+                <TextView android:layout_width="fill_parent" android:layout_height="fill_parent"
+                          android:textAppearance="?android:attr/textAppearanceLarge" android:text="10"
+                          android:id="@+id/main_goalFat" android:layout_weight="1"
+                          android:textSize="@dimen/text_size_meals_macros" android:gravity="center"
+                          android:textStyle="italic"/>
+            </LinearLayout>
+        </LinearLayout>
+        <View style="@style/HorizontalDivider"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" android:layout_marginTop="2dp">
+            <Space
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.1"/>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent"
+                          android:layout_height="fill_parent" android:layout_weight="1">
+                <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent"
+                           android:id="@+id/imageView5" android:layout_weight="1" android:src="@drawable/ic_kcal"
+                           android:layout_marginLeft="4dp" android:layout_marginRight="4dp"
+                           android:tint="@android:color/holo_purple" android:clickable="false"/>
+                <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent"
+                           android:id="@+id/imageView6" android:layout_weight="1" android:src="@drawable/ic_protein"
+                           android:tint="@android:color/holo_red_light" android:layout_marginLeft="4dp"
+                           android:layout_marginRight="4dp"/>
+                <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent"
+                           android:id="@+id/imageView7" android:layout_weight="1" android:layout_marginLeft="4dp"
+                           android:layout_marginRight="4dp" android:src="@drawable/ic_carbs"
+                           android:tint="@android:color/holo_orange_dark"/>
+                <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent"
+                           android:id="@+id/imageView8" android:layout_weight="1" android:layout_marginLeft="4dp"
+                           android:layout_marginRight="4dp" android:src="@drawable/ic_fat"
+                           android:tint="@android:color/holo_orange_light"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
+
+
+

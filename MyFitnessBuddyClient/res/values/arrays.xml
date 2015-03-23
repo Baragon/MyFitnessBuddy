@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="exercise_level_array">
+        <item>Basal Metabolic Rate</item>
+        <item>No exercise(Couch potato)</item>
+        <item>3 times/week</item>
+        <item>4 times/week</item>
+        <item>5 times/week</item>
+        <item>6 times/week</item>
+        <item>Daily exercise</item>
+        <item>Daily exercise + physical job</item>
+    </string-array>
+    <string-array name="goals_array">
+        <item>Fat Loss(Reckless),TDEE-25%</item>
+        <item>Fat Loss(Aggressive),TDEE-20%</item>
+        <item>Fat Loss(Suggested),TDEE-15%</item>
+        <item>Maintain,TDEE</item>
+        <item>Weight Gain(Cautious),TDEE+5%</item>
+        <item>Weight Gain(Text Book),TDEE+10%</item>
+        <item>Weight Gain(Aggressive),TDEE+15%</item>
+    </string-array>
+
+</resources>

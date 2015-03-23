@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="5"
+                android:id="@+id/goals_height" android:hint="@string/goals_height_hint" android:singleLine="true"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/goals_centimeter"
+                android:id="@+id/textView6"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="5"
+                android:id="@+id/goals_weight" android:hint="@string/goals_weight_hint" android:singleLine="true"
+                android:layout_marginLeft="40dp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/goals_kg"
+                android:id="@+id/textView7"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="5"
+                android:imeOptions="actionDone"
+                android:id="@+id/goals_age" android:hint="@string/goals_age_hint" android:singleLine="true"/>
+        <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/goals_sex"
+                android:id="@+id/goals_sex_switch" android:textOff="@string/goals_sex_text_male"
+                android:textOn="@string/goals_sex_text_female" android:enabled="true"/>
+    </LinearLayout>
+    <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/goals_exercise_level_text"
+                android:id="@+id/goals_exercise_text"/>
+        <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/goals_exercise_text"
+                android:id="@+id/goals_exercise"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/goals_goal_text"
+                android:id="@+id/goals_goal_text"/>
+        <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/goals_goal_text"
+                android:id="@+id/goals_goal"/>
+    </RelativeLayout>
+    <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/goals_checkbox_text"
+            android:id="@+id/goals_custom_macros_checkbox" android:enabled="true" android:onClick="onCheckboxClick"/>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:layout_marginTop="5dp">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/goals_cal"
+                android:id="@+id/textView13"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" android:gravity="right">
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="5"
+                    android:id="@+id/goals_cal" android:editable="false"
+                    android:gravity="right" android:singleLine="true" android:hint="@string/new_food_cal"
+                    android:textColor="@android:color/white"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/goald_cal_per_day"
+                    android:ems="3"
+                    android:id="@+id/textView8" android:layout_marginRight="10dp" android:gravity="right"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:layout_marginTop="5dp">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/goals_protein"
+                android:id="@+id/textView14"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" android:gravity="right">
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="5"
+                    android:id="@+id/goals_protein" android:editable="false"
+                    android:gravity="right" android:singleLine="true" android:hint="@string/new_food_protein"
+                    android:textColor="@android:color/white"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/goals_gram_per_day"
+                    android:ems="3"
+                    android:id="@+id/textView9" android:layout_marginRight="10dp" android:gravity="right"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:layout_marginTop="5dp">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/goals_carbs"
+                android:id="@+id/textView16"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" android:gravity="right">
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="5"
+                    android:id="@+id/goals_carbs" android:editable="false"
+                    android:gravity="right" android:singleLine="true" android:hint="@string/new_food_carbs"
+                    android:textColor="@android:color/white"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/goals_gram_per_day"
+                    android:ems="3"
+                    android:id="@+id/textView11" android:layout_marginRight="10dp" android:gravity="right"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:layout_marginTop="5dp">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/goals_fat"
+                android:id="@+id/textView15"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" android:gravity="right">
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:inputType="number"
+                    android:ems="5"
+                    android:id="@+id/goals_fat" android:editable="false"
+                    android:imeOptions="actionDone"
+                    android:gravity="right" android:singleLine="true" android:hint="@string/new_food_fat"
+                    android:textColor="@android:color/white"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/goals_gram_per_day"
+                    android:ems="3"
+                    android:id="@+id/textView12" android:layout_marginRight="10dp" android:gravity="right"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" android:gravity="bottom|center_horizontal">
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/goals_button_continue"
+                android:id="@+id/goals_continue_button" android:layout_marginBottom="5dp"
+                android:onClick="onContinueClick"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/newFood_name"
+            android:hint="@string/new_food_foodname"
+            android:imeOptions="actionNext"
+            android:singleLine="true"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/newFood_cal"
+            android:hint="@string/new_food_cal"
+            android:imeOptions="actionNext"
+            android:singleLine="true"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/newFood_protein"
+            android:hint="@string/new_food_protein"
+            android:imeOptions="actionNext"
+            android:singleLine="true"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/newFood_carbs"
+            android:hint="@string/new_food_carbs"
+            android:imeOptions="actionNext"
+            android:singleLine="true"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/newFood_fat"
+            android:hint="@string/new_food_fat"
+            android:imeOptions="actionNext"
+            android:singleLine="true"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_food_add_food"
+            android:id="@+id/newFood_addFood" android:layout_gravity="center_horizontal"
+            android:onClick="onAddNewFoodFinishClick"/>
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:key="pref_online"
+        android:title="@string/pref_online_title"
+        android:summary="@string/pref_online_summary"
+        android:defaultValue="true"/>
+    <EditTextPreference
+            android:key="pref_server"
+            android:title="@string/pref_server_address_title"
+            android:summary="@string/pref_server_address_summary"
+            android:defaultValue="192.168.1.100:8000"
+            android:dialogTitle="@string/pref_server_address_dialogTitle"
+            android:dependency="pref_online"
+            />
+    <Preference android:title="@string/pref_clear_database"
+                android:key="pref_clear_database_button"
+                android:summary="@string/pref_clear_database_summary"/>
+</PreferenceScreen>
