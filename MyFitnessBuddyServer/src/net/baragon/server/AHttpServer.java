@@ -27,7 +27,7 @@ public abstract class AHttpServer implements HttpHandler{
         if(response!=null) {
             httpExchange.sendResponseHeaders(200, response.getBytes().length);
             OutputStream out = httpExchange.getResponseBody();
-            out.write(response.getBytes());
+            out.write(response.getBytes("UTF-8"));
             out.close();
         }
         httpExchange.close();
