@@ -200,7 +200,7 @@ public class LocalClientExecutor implements SQLiteOnLoadCompleteListener, Loadin
 
     private Macros getGoals(DateTime date) {
         String dateString = dateFormatter.print(date);
-        Cursor goalsCursor = db.query("goals", new String[]{"cal", "protein", "carbs", "fat"}, "date <= ?", new String[]{dateString}, null, null, "date ASC", "1");
+        Cursor goalsCursor = db.query("goals", new String[]{"cal", "protein", "carbs", "fat"}, "date <= ?", new String[]{dateString}, null, null, "date DESC", "1");
         if (goalsCursor.moveToFirst()) {
             double cal = goalsCursor.getFloat(0);
             double protein = goalsCursor.getFloat(1);
