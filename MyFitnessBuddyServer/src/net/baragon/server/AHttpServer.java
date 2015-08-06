@@ -25,7 +25,7 @@ public abstract class AHttpServer implements HttpHandler{
         HashMap<String,String> map = queryToMap(query);
         String response = handleRequest(map);
         if(response!=null) {
-            httpExchange.sendResponseHeaders(200, response.getBytes().length);
+            httpExchange.sendResponseHeaders(200, response.getBytes("UTF-8").length);
             OutputStream out = httpExchange.getResponseBody();
             out.write(response.getBytes("UTF-8"));
             out.close();
